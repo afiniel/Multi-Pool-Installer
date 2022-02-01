@@ -21,13 +21,8 @@ All in one installer for your crypto-server needs.
 
 - [Installation](#-installation)
 - [Usage](#-usage)
-- [YiiMP Single Server Install](#-yiimp-single-server-install)
+- [YiiMP](#-Yiimp-install)
 	- [Commands](#-commands)
-- [YiiMP Multi-Server Install](#-yiimp-multi-server-install)
-- [NOMP Install](#-nomp-install)
-- [MPOS Install](#-mpos-install)
-- [CryptoNote-Nodejs Install](#-cryptonote-nodejs-install)
-- [Generic faucet script](#-generic-faucet-script)
 - [Credits](#-credits)
 - [License](#-license)
 - [Support](#-support)
@@ -39,7 +34,7 @@ Installation:
 Requires a fresh Ubuntu 16.04 or Ubuntu 18.04 installation.
 
 ```
-curl https://raw.githubusercontent.com/cryptopool-builders/Multi-Pool-Installer/master/bootstrap.sh | bash
+curl https://raw.githubusercontent.com/afiniel/Multi-Pool-Installer/master/bootstrap.sh | bash
 ```
 
 Update:
@@ -47,7 +42,7 @@ Update:
 When a new release is made public updating is as simple as running the same command as above.
 
 ```
-curl https://raw.githubusercontent.com/cryptopool-builders/Multi-Pool-Installer/master/bootstrap.sh | bash
+curl https://raw.githubusercontent.com/afiniel/Multi-Pool-Installer/master/bootstrap.sh | bash
 ```
 
 ## ▶️ Usage
@@ -68,9 +63,9 @@ After rebooting the server to your user to start the installer type:
 multipool
 ```
 
-## ⚙️ YiiMP Single Server Install
+## ⚙️ YiiMP Install
 
-The Yiimp Single Server Install is recommend for private or very small pools. It is recommended to have at least 4GB ram in order to function properly.
+The Yiimp Installer is recommend for private or very small pools. It is recommended to have at least 4GB ram in order to function properly.
 Setup is automated after the following questions are answered:
 
 Question | Default | Help
@@ -153,46 +148,6 @@ yiimp
 ```
 and get to know those commands as well!
 
-## 🤖 YiiMP Multi-Server Install
-
-The YiiMP Multi-Server Install is recommended for those that want to run larger public pools. This offers the most security and is a lot more complex on the setup.
-
-The following two tables show you the perfered server setup for the multi-server setup:
-
-Role | OS Version | Recommended Ram
-:--|:--|:-:
-Web Server | Ubuntu 16.04 or Ubuntu 18.04 | 2GB
-DB & Stratum Server | Ubuntu 16.04 or Ubuntu 18.04 | 4GB
-Daemon Server | Ubuntu 16.04 or Ubuntu 18.04 | 8GB+
-
- or
-
-Role | OS Version | Recommended Ram
-:--|:--|:-:
-Web Server | Ubuntu 16.04 or Ubuntu 18.04 | 2GB
-DB Server | Ubuntu 16.04 or Ubuntu 18.04 | 2GB
-Stratum Server | Ubuntu 16.04 or Ubuntu 18.04 | 2GB
-Daemon Server | Ubuntu 16.04 or Ubuntu 18.04 | 8GB+
-
-It is also highly recommended to use a provider that offers private IP's between your servers. If your provider only offers public IP's you must install Wireguard (Installer provided). This will setup a secure VPN connection between your servers for the backend communication.
-
-#### If installing wireguard do not modify the default private IP's that are provide. Installation will fail!
-
-Just like with the single server install there must be a user account created. If you attempt to run the script under root, it will force you to create a new user account and log in to it.
-
-After the user accounts are created on each server, setup <b>MUST</b> begin on the server that is hosting your database. You do not need to run the installer individually on each server.  
-
-#### ✏️ During the setup process you will be prompted to enter the user name and password for each of your servers. This is required for the installer to be able to SSH in to each server to perform the installation tasks on that server.
-
-Installation will take about 25 minutes to fully complete. You will get a message on the screen letting you know it has finished.
-
-#### A server reboot is REQUIRED after the installer is completed to finalize the installation process!
-
-#### On first reboot it may take up to 1 minute before the cron screens auto-start. After waiting one minute type:
-```
-motd
-```
-
 #### To help make your server more secure we have changed the install locations and directory structure of YiiMP as follows:
 
 Directory | Files | Server
@@ -239,56 +194,6 @@ yiimp
 ```
 and get to know those commands as well!
 
-
-
-## 📦 NOMP Install
-
-The NOMP options install everything you need to run NOMP and gets your first coin installed. It is recommended to have at least 2GB ram in order to function properly.
-
-During the initial setup you will be asked similar questions as the YiiMP installer in addition you will also be asked for the first coin that you wish to have installed. After all the questions are answered setup will be fully automated until the coin installation where you will need to copy and paste the coind and coin-cli names.
-
-#### To help make your server more secure we have changed the install locations and directory structure of NOMP as follows:
-
-Directory | Files
-:--|:-:
-/home/crypto-data/nomp | General install location for NOMP
-/home/crypto-data/nomp/starts | required start files
-/home/crypto-data/nomp/core | New location for NOMP nodejs files
-/home/crypto-data/nomp/configuration | New location for NOMP config files
-/home/crypto-data/nomp/logs | New location for NOMP/Nginx log files
-/home/crypto-data/nomp/site/web | New Location of NOMP html files
-/home/crypto-data/wallets | New location for wallets
-
-Permissions have been setup correctly allowing your main user write acess to the /home/crypto-data directories! Changing file or directory permissions after install will cause your NOMP to not function correctly, you have been warned!!
-
-By default all non web ports have been blocked by the firewall, with exception of the first default coin. To open any other ports type:
-```
-sudo ufw allow port number
-```
-
-## 🐣 MPOS Install
-
-This feature will be added at a later date.
-
-The MPOS options install everything you need to run MPOS and gets your first coin installed. It is recommended to have at least 4GB ram in order to function properly.
-
-During the initial setup you will be asked similar questions as the YiiMP installer in addition you will also be asked for the first coin that you wish to have installed. After all the questions are answered setup will be fully automated.  
-
-## 🐛 CryptoNote-Nodejs Install
-
-This feature will be added at a later date.
-
-The CryptoNote-Nodejs options install everything you need to run CryptoNote-Nodejs and gets your first coin installed. It is recommended to have at least 4GB ram in order to function properly.
-
-During the initial setup you will be asked similar questions as the YiiMP installer in addition you will also be asked for the first coin that you wish to have installed. After all the questions are answered setup will be fully automated.
-
-## 📚 Generic faucet script
-
-This feature will be added at a later date.
-
-The faucet options install everything you need to run your own faucet script and setup multiple coins on it. Each coin will have their own sub-site.
-Setup is automated after the following questions are answered:
-
 ## ❤️ Credits
 
 The following GitHubs have been a source of inspiration and code:
@@ -298,11 +203,7 @@ The following GitHubs have been a source of inspiration and code:
 
 The following forks have been used in the making of the script:
 
-* [YiiMP](https://github.com/tpruvot/yiimp)
-* [NiceNOMP](https://github.com/cryptosharks131/NiceNOMP)
-* [UNOMP](https://github.com/UNOMP/unified-node-open-mining-portal)
-* [cryptonote-nodejs](https://github.com/dvandal/cryptonote-nodejs-pool)
-* [faucet script](https://github.com/ChristianGrieger/Cryptocurrency-faucet-script)
+* [YiiMP](https://github.com/Kudaraidee/yiimp)
 
 ## 🎓 License
 
@@ -310,18 +211,13 @@ The following forks have been used in the making of the script:
 
 ## 🎁 Support
 
-Join our active discord channel:
+* Join our active discord channel:
 
-https://discord.gg/UGbGvna
-
-Find our BitCoinTalk Thread at:
-
-https://bitcointalk.org/index.php?topic=4980079.0
+Need Help? join us <a href="https://discord.gg/GVZ4tchkKc"><img src="https://img.shields.io/discord/904564600354254898.svg?style=flat&label=Discord %3C3%20&color=7289DA%22" alt="Join Community Badge"/></a>
 
 Donations for continued support of this script are welcomed at:
 
-* BTC 3LegHBKdAmcdN9usBae5UPVnQWk5vCrUDy
-* BCH 1C5b876B7ZJo6P1hjqKGBmorYoY8RuAm7D
-* ETH 0x7BAEaae15De37A93e5Bcf27622F2E65ede90A35C
-* ETC 0xc5C3E017087adB10C2FE085cF8eA9b1c9867Ff28
-* LTC MAutGukgacY74Pv38k4DGs91RGTDbmUSmQ
+* BTC bc1q338jnjdl6dky7ka88ln8qmcekal48uw072n9v9
+* Doge DSpy3taXqkbWSkhM4GMtsXftxyYHX2Gt3r
+* ETH 0x50C7d0BF9714dBEcDc1aa6Ab0E72af8e6Ce3b0aB
+* LTC LW4iFgCTQAVWoxe4VF7nFy2WLHdR6xNkjK
