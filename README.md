@@ -1,28 +1,25 @@
-## There are several forks of this repo now that are being maintained by some great people and plenty of help on the discord. Be safe eveyone. - CPB
+## Afiniel YiiMP Server Installer 🚀
+Need Help? join us <a href="https://discord.gg/GVZ4tchkKc"><img src="https://img.shields.io/discord/904564600354254898.svg?style=flat&label=Discord %3C3%20&color=7289DA%22" alt="Join Community Badge"/></a>
 
 
-## Afiniel YiiMP Server installer! 🚀
+## Fork from Cryptopool-builders installer
 
-## This is opened as a public beta - all features are not final!
+# This is opened as a public beta - all features are not final!
 
-All in one installer for your crypto-server needs.
+All in one, this installer install all that your server need.
 
 **Afiniel YiiMP Server installer!** Automates most of the tedious tasks of the following releases:
 
 * YiiMP
-* NOMP
-* MPOS
-* CryptoNote-Nodejs
-* Generic faucet script
+* NOMP Coming Soon
+* MPOS coming Soon
+* CryptoNote-Nodejs Coming Soon
+* Generic faucet script Coming Soon
 
 ## TOC
 
 - [Installation](#-installation)
-- [Usage](#-usage)
 - [YiiMP](#-Yiimp-install)
-	- [Commands](#-commands)
-- [Credits](#-credits)
-- [License](#-license)
 - [Support](#-support)
 
 ## 💾 Installation
@@ -45,11 +42,8 @@ curl https://raw.githubusercontent.com/afiniel/Multi-Pool-Installer/master/boots
 
 ## ▶️ Usage
 
-You may run the installer under root or an existing account. If you already have a user account created on your server that account must already be part of the sudo group.
+You need run the installer under root or an existing account. If you already have a user account created on your server that account must already be part of the sudo group.
 
-If you are running as root the installer will prompt you to create a new account.
-
-After creating the new user account or updating your existing account, you MUST reboot the machine in order for the accounts permissions to be updated properly.
 
 After rebooting the server to your user to start the installer type:
 ```
@@ -58,7 +52,7 @@ multipool
 
 ## ⚙️ YiiMP Install
 
-The Yiimp Installer is recommend for private or very small pools. It is recommended to have at least 4GB ram in order to function properly.
+The Yiimp Installer is recommend for private or very small pools. It is recommended to have at least 4-8 GB ram in order to function properly.
 Setup is automated after the following questions are answered:
 
 Question | Default | Help
@@ -203,10 +197,6 @@ The following forks have been used in the making of the script:
 [MIT](http://webpro.mit-license.org/)
 
 ## 🎁 Support
-
-* Join our active discord channel:
-
-Need Help? join us <a href="https://discord.gg/GVZ4tchkKc"><img src="https://img.shields.io/discord/904564600354254898.svg?style=flat&label=Discord %3C3%20&color=7289DA%22" alt="Join Community Badge"/></a>
 
 Donations for continued support of this script are welcomed at:
 
