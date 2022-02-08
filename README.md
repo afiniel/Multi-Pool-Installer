@@ -1,15 +1,13 @@
 ## There are several forks of this repo now that are being maintained by some great people and plenty of help on the discord. Be safe eveyone. - CPB
 
 
-## Ultimate Crypto-Server Setup Installer! 🚀
+## Afiniel YiiMP Server installer! 🚀
 
 ## This is opened as a public beta - all features are not final!
 
 All in one installer for your crypto-server needs.
 
-**Ultimate Crypto-Server Setup Installer!** Automates most of the tedious tasks of the following releases:
-
-<img align="right" src="./.assets/install.gif?raw=true" height="215">
+**Afiniel YiiMP Server installer!** Automates most of the tedious tasks of the following releases:
 
 * YiiMP
 * NOMP
