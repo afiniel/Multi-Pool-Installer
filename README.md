@@ -113,7 +113,7 @@ By default even though all stratum algos start on server start, the ports have b
 sudo ufw allow port number
 ```
 
-From there your YiiMP Single Server installation is fully completed. You can now go to example.com/site/AdminPortal to access your admin section and start adding your coins.
+From there your YiiMP installation is fully completed. You can now go to example.com/site/AdminPortal to access your admin section and start adding your coins.
 
 #### 🔗 Commands
 
@@ -134,22 +134,6 @@ We also suggest that you type:
 yiimp
 ```
 and get to know those commands as well!
-
-#### To help make your server more secure we have changed the install locations and directory structure of YiiMP as follows:
-
-Directory | Files | Server
-:--|:-:|:--
-/home/crypto-data/yiimp | General install location for YiiMP | All
-/home/crypto-data/yiimp/starts | screens and stratum sh files - you do not need to run these | Web and Stratum
-/home/crypto-data/yiimp/site | - | Web and Stratum
-/home/crypto-data/yiimp/site/web | New location for YiiMP web files | Web
-/home/crypto-data/yiimp/site/backup | backup location for mysql DB | Web
-/home/crypto-data/yiimp/site/configuration | New location of your serverconfig.php | Web
-/home/crypto-data/yiimp/site/crons | New location of the `main:blocks:loop2` sh files | Web
-/home/crypto-data/yiimp/site/log | New location for debug.log and your nginx server log | Web
-/home/crypto-data/yiimp/site/stratum | New location for your stratum files | Stratum
-/home/crypto-data/wallets | New location for wallets | Daemon
-
 
 Permissions have been setup correctly allowing your main user write acess to the /home/crypto-data directories! Changing file or directory permissions after install will cause your YiiMP to not function correctly, you have been warned!!
 
@@ -189,7 +173,7 @@ The following GitHubs have been a source of inspiration and code:
 * [realeas-it](https://github.com/webpro/release-it)
 
 The following forks have been used in the making of the script:
-
+* [cryptopool-builders](https://github.com/cryptopool-builders/Multi-Pool-Installer)
 * [YiiMP](https://github.com/Kudaraidee/yiimp)
 
 ## 🎓 License
